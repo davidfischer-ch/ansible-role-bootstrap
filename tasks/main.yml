@@ -22,7 +22,7 @@
             dest: /etc/sudoers.d/{{ user }}-sudoer
             owner: root
             group: root
-            mode: 0440
+            mode: '440'
             validate: 'visudo -cf %s'
           when: bootstrap_sudoers_directory.stat.exists|bool
 
@@ -33,7 +33,7 @@
             line: '{{ user }} ALL=(ALL) NOPASSWD: ALL'
             owner: root
             group: root
-            mode: 0440
+            mode: '440'
             validate: 'visudo -cf %s'
           when: not bootstrap_sudoers_directory.stat.exists|bool
       become: yes
