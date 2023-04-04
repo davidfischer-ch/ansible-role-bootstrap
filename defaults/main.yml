@@ -4,8 +4,8 @@ ssh_authorized_keys:
 sudoers_secure_paths:
   - /usr/local/sbin
   - /usr/local/bin
+  - /usr/sbin
+  - /usr/bin
   - /sbin
   - /bin
   - /snap/bin
-  - /usr/sbin
-  - /usr/bin

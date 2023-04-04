@@ -49,7 +49,7 @@
       lineinfile:
         dest: /etc/sudoers
         regexp: Defaults\s+secure_path\s*=.*
-        line: Defaults secure_path = "{{ sudoers_secure_paths|join(':') }}"
+        line: "Defaults\tsecure_path=\"{{ sudoers_secure_paths|join(':') }}\""
         validate: 'visudo -cf %s'
       become: yes
       tags: sudo
